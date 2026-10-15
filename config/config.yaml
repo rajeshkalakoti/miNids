@@ -1,0 +1,19 @@
+defaults:
+    - _self_
+
+environment: local
+absolute_paths:
+  local: /home/rajeshkalakoti/Projects/miNids
+  server: /illukas/home/rkalak/federated/miNids
+
+project_path: ${absolute_paths.${environment}}
+
+dataset:
+  name: ciciomt
+  paths:
+    ciciomt: data/ciciomt.csv.bz2
+  target_name: binary
+  label_columns: [attack, category, binary]
+  n_per_class: 5000
+  read_fraction: 0.03
+  seed: 42
